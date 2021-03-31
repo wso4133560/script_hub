@@ -1,0 +1,26 @@
+# 基础用法
+mount [设备] [文件夹]
+
+# 列出mount 列表
+mount -l
+
+# mount文件系统的类型
+mount -t [文件系统] [设备] [文件夹]
+
+# 列出mount的所有信息
+cat /proc/filesystems
+
+### loop
+创建包含文件系统的一个文件，一般做虚拟机磁盘时候使用
+    dd if=/dev/zero of=a.ex2 bs=1024 count=64
+    echo y | mke2fs -t ext2 a.ex2
+    mkdir -p d
+    # Since no specific loop device file is given (loop0, loop1, etc.),
+    # find the first free one.
+    sudo mount a.ex2 d -o loop
+    # Do stuff
+    sudo umount d
+
+
+# umount
+umount [文件夹]
