@@ -1,0 +1,17 @@
+# 显示所有socket
+ SEND,netstat -a
+
+# 显示tcp连接
+ SEND,netstat -t
+
+# 显示udp连接
+ SEND,netstat -u
+
+# 显示有效连接
+ SEND,netstat -n
+
+# 查看连接
+SEND,netstat -anlp
+
+# 查看监听端口
+SEND,netstat -tnlp
