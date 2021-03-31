@@ -1,3 +1,13 @@
+# perf的详细用法
+http://www.brendangregg.com/perf.html
+
 # 查看整个系统的性能热点
 perf top
 
+# perf 查看cpu时间消耗
+perf record -e cpu-clock -g -p [进程id]
+perf report -g
+
+# perf查看一级缓存消耗
+perf record -e L1-dcache-load-misses -p [进程id]
+perf report
