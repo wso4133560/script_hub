@@ -1,0 +1,5 @@
+# 查看块设备命令
+lsblk
+
+# 查看有UUID的命令
+lsblk -f
