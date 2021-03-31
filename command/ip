@@ -1,0 +1,6 @@
+# 查看路由
+ip route show
+
+# 配置默认路由
+route add default gw [ip]
+
