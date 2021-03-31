@@ -1,0 +1,5 @@
+# 压缩cpio文件
+find . -type f | cpio -pvdumB /tmp/find.cpio
+
+# 解压cpio文件
+cpio -i < ab.cpio
