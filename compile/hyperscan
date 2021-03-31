@@ -1,0 +1,26 @@
+# project
+https://github.com/intel/hyperscan
+
+# 依赖环境
+apt install ragel
+export BOOST_ROOT=[boost的路径]
+
+# 编译debug版本
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DDEBUG_OUTPUT=1
+
+# 编译release
+cmake .. -DCMAKE_BUILD_TYPE=Release
+
+# 编译动态库
+cmake .. -DBUILD_SHARED_LIBS=on
+
+# hsbench测试
+# 块模式下针对HTTP流量对Snort纯字符串进行匹配
+taskset 1 ./bin/hsbench -e pcre/snort_literals -c corpora/alexa200.db -N
+# 块模式下针对HTTP流量对Snort PCRE规则进行匹配
+taskset 1 ./bin/hsbench -e pcre/snort_pcres -c corpora/alexa200.db
+# 流模式下针对Gutenberg文本对Teakettle合成规则进行匹配
+taskset 1 ./bin/hsbench -e pcre/teakettle_2500 -c corpora/gutenberg.db
+
+# 做单元测试
+./bin/unit-hyperscan
