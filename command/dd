@@ -1,0 +1,24 @@
+# 将一个磁盘的所有内容拷贝到另一个磁盘
+dd if=/dev/hdb of=/dev/hdd
+sudo dd bs=4M if=/dev/sda of=/dev/sdb
+
+# 将一个磁盘的所有内容销毁
+sudo dd bs=4M if=/dev/zero of=/dev/sdb
+
+# 全盘数据备份和压缩
+dd if=/dev/hdb | gzip > /root/image.gz
+gzip -dc /root/image.gz | dd of=/dev/hdb
+
+# 拷贝内存内容到硬盘
+dd if=/dev/mem of=/root/mem.bin bs=1024
+
+# 销毁磁盘数据
+dd if=/dev/urandom of=/dev/hda1
+
+# 测试硬盘读写速度
+#dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file
+#dd if=/root/1Gb.file bs=64k | dd of=/dev/null
+
+# 修复硬盘
+#dd if=/dev/sda of=/dev/sda 或dd if=/dev/hda of=/dev/hda
+
