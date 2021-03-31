@@ -1,0 +1,8 @@
+# 清除所有规则
+iptables -f
+
+# 查看所有规则
+iptables -L -n
+
+# 查看转发规则
+iptables -t nat -nL
