@@ -1,0 +1,6 @@
+# 配置网卡信息
+ifconfig [网卡] [ip] netmask [掩码]
+
+# 查看网卡信息
+ifconfig [网卡]
+
