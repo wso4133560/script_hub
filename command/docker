@@ -55,3 +55,6 @@ docker import [tar包] [镜像名字]
  docker run --net=host --rm -it [镜像] bash
  docker run --net=bridge --rm -it [镜像] bash
  docker run --net=container:[进程] --rm -it [镜像] bash
+
+# docker 登录
+docker login --username=[账号] [url]

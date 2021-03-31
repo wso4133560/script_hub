@@ -15,3 +15,6 @@ SEND,netstat -anlp
 
 # 查看监听端口
 SEND,netstat -tnlp
+
+# 查看TCP连接数量
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
