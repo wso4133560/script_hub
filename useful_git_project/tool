@@ -348,3 +348,9 @@ https://github.com/OpenVPN/openvpn.git
 
 # zeak，一款开源的IDS的库
 https://github.com/zeek/zeek
+
+# linux内核模糊测试
+https://github.com/kernelslacker/trinity.git
+
+# linux正确性测试
+https://github.com/linux-test-project/ltp.git
