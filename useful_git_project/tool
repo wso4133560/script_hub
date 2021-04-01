@@ -1,0 +1,350 @@
+# 录频工具
+https://github.com/alyssaxuu/screenity
+
+# OCR识别
+https://github.com/tesseract-ocr/tesseract.git
+
+# 查看sqlite文件格式的工具
+https://github.com/sqlitebrowser/sqlitebrowser.git
+
+# 谷歌test
+https://github.com/google/googletest.git
+
+# 分布式实时性能监控系统
+https://github.com/netdata/netdata.git
+
+# 密码破解工具
+https://github.com/hashcat/hashcat.git
+
+# IP地址库查询，定位地址
+https://github.com/lionsoul2014/ip2region.git
+
+# QRCode 扫描二维码、扫描条形码、相册获取图片后识别、生成带 Logo 二维码、支持微博微信 QQ 二维码扫描样式
+https://github.com/bingoogolapple/BGAQRCode-Android.git
+
+# 车牌自动识别系统
+https://github.com/openalpr/openalpr.git
+
+# 整个百度中使用的工业级RPC框架
+https://github.com/apache/incubator-brpc.git
+
+# 在线机器学习
+https://github.com/VowpalWabbit/vowpal_wabbit.git
+
+# 现代C++机器学习工具包
+https://github.com/davisking/dlib.git
+
+# opengl开源课程
+https://github.com/ssloy/tinyrenderer.git
+
+# 种子客户端
+https://github.com/qbittorrent/qBittorrent.git
+
+# 网络流量抓取和还原系统
+https://github.com/xplico/xplico.git
+
+# 协议深度识别
+https://github.com/ntop/nDPI.git
+
+# 可视化数据包分析工具(看视频很酷)
+https://github.com/xplico/CapAnalysis.git
+
+# Tcp流提取工具
+https://github.com/fmadio/pcap_flow.git
+
+# TCP/IP数据包解复用器，流重组重点参考这个
+https://github.com/simsong/tcpflow.git
+
+# 用户友好的C库执行TCP流重组和IPv4/6碎片整理
+https://github.com/sch3m4/libntoh.git
+
+# tmalloc在这个工具里面，谷歌的开源工具
+https://github.com/gperftools/gperftools.git
+
+# 一个支持指令集加速的base64解码
+https://github.com/aklomp/base64.git
+
+# 高效的正则匹配引擎  Hsbench正则吞吐量测试工具 HsCheck正则验证的工具
+https://github.com/intel/hyperscan.git
+
+# 数通转发框架
+https://github.com/FDio/vpp.git
+
+# DPDK
+https://github.com/DPDK/dpdk.git
+
+# 谷歌的操作系统
+https://github.com/fuchsia-mirror
+
+# 可以生成状态机的库
+http://www.colm.net/open-source/ragel/
+
+# MirageOS是一个库操作系统，可为各种云计算和移动平台上的安全，高性能网络应用程序构建unikernel
+https://github.com/mirage/mirage.git
+
+# 英伟达开源的物理运算系统
+https://github.com/NVIDIAGameWorks/PhysX-3.4.git
+
+# Dragonfly是一个基于开源智能P2P的图像和文件分发系统
+https://github.com/dragonflyoss/Dragonfly.git
+
+# 一个能够捕获Crash生成堆栈的开源项目
+https://github.com/google/breakpad
+
+# 运维管理脚本库
+https://github.com/aqzt/kjyw.git
+
+# 批量管理脚本模板
+https://github.com/liquanzhou/ops_doc
+
+# 检测服务器状态的软件
+https://github.com/acassen/keepalived 
+
+# 精简指令集 RISC-V
+https://riscv.org/specifications/
+https://github.com/riscv
+https://github.com/riscv/riscv-tools
+
+# DNA读图Hash算法
+https://github.com/CMU-SAFARI/GRIM
+
+# OpenTracker并非仅用于跟踪人类作为演示图像，它还可以跟踪所有内容，甚至某些特殊点！
+https://github.com/rockkingjy/OpenTracker.git
+
+# 运维笔记
+https://github.com/coregear/linux
+https://github.com/meetbill/linux_tools.git
+
+# Borg的主要目标是提供一种有效且安全的备份数据的方式。由于仅存储更改，因此所使用的重复数据删除技术使Borg适合日常备份。经过身份验证的加密技术使其适合于备份到不完全受信任的目标。
+https://github.com/borgbackup/borg
+
+# Buildroot是一种简单，高效且易于使用的工具，可以生成嵌入式Linux系统通过交叉编译。
+https://github.com/buildroot/buildroot
+
+# edb是跨平台的AArch32 / x86 / x86-64调试器。它受到Ollydbg的启发
+https://github.com/eteran/edb-debugger
+
+# 中文FAQ框架
+https://github.com/baidu/AnyQ
+
+# 机器人视觉平台
+https://github.com/baidu/boteye
+
+# 信息提取工具
+https://github.com/baidu/information-extraction
+
+# 百度情绪分类系统
+https://github.com/baidu/Senta
+
+# 大型中文MRC数据集
+https://github.com/baidu/DuReader
+
+# 知识驱动对话
+https://github.com/baidu/knowledge-driven-dialogue
+
+# 百度开源分词工具
+https://github.com/baidu/lac
+
+# 面对面翻译小程序
+https://github.com/Tencent/Face2FaceTranslator
+
+# 谷歌日志库
+https://github.com/google/glog
+
+# LLVM的IR超级优化器
+https://github.com/google/souper
+
+# 神经逻辑推导器
+https://github.com/google/neural-logic-machines
+
+# 序列化工具
+https://github.com/google/flatbuffers
+
+# C++注入框架
+https://github.com/google/fruit
+
+# 一个公共表达式语言运行时的c++实现
+https://github.com/google/cel-cpp
+
+# 二进制文件大小分析器
+https://github.com/google/bloaty
+
+# 便携式分析性能工具
+https://github.com/amzn/hawktracer.git
+
+# Facebook提供的HTTP服务器
+https://github.com/facebook/proxygen
+
+# 会将PHP代码转换成高级别的字节码
+https://github.com/facebook/hhvm.git
+
+# 监视文件并且记录文件的改动情况
+https://github.com/facebook/watchman
+
+# Mcrouter是一个用于扩展memcached部署的memcached协议路由器
+https://github.com/facebook/mcrouter
+
+# 用于控制网络交换机的Facebook开放交换系统软件
+https://github.com/facebook/fboss
+
+# 超高数据传输工具
+https://github.com/facebook/wdt.git
+
+# 栈RNN代码
+https://github.com/facebook/Stack-RNN
+
+# 快速UI画图https
+https://github.com/intel/fastuidraw
+
+# 深度神经网络
+https://github.com/intel/clDNN
+https://github.com/intel/ros_openvino_toolkit
+
+# NEMU是专门构建和设计用于在现代64位Intel和ARM CPU上运行现代云工作负载的开源虚拟机管理程序。
+https://github.com/intel/nemu
+
+# TCP协议测试套件
+https://github.com/intel/net-test-suites
+
+# intel芯片栈追踪
+https://github.com/intel/satt
+
+# 基于磁带的深度神经网络自动梯度系统
+https://github.com/intel/pytorch
+
+# 跨平台库管理工具
+https://github.com/microsoft/vcpkg
+
+# ANN搜索管理库
+https://github.com/microsoft/SPTAG
+
+# 决策树算法
+https://github.com/microsoft/LightGBM
+
+# windows推理性能
+https://github.com/microsoft/Windows-Machine-Learning
+
+# 静态的将二进制转换成LLVM的IR，IR提权
+https://github.com/microsoft/llvm-mctoll
+
+# 适用于黑盒的机器学习
+https://github.com/microsoft/interpret
+
+# windows文件管理器
+https://github.com/microsoft/winfile
+
+# windows下的计算器
+https://github.com/microsoft/calculator
+
+# 边缘学习代码
+https://github.com/microsoft/EdgeML
+
+# windows界面示例
+https://github.com/microsoft/Windows.UI.Composition-Win32-Samples
+
+# 检测windows上调用的API
+https://github.com/microsoft/Detours
+
+# win10物联网示例代码
+https://github.com/microsoft/Windows-iotcore-samples
+
+# 快速有限状态机库
+https://github.com/microsoft/BlingFire
+
+# VC++的示例
+https://github.com/microsoft/VCSamples
+
+# 图形驱动示例
+https://github.com/microsoft/graphics-driver-samples
+
+# 使用vs查询API
+https://github.com/microsoft/vs-setup-samples
+
+# 微软PDB的信息
+https://github.com/microsoft/microsoft-pdb
+
+# 发布的深度学习库
+https://github.com/pytorch/pytorch
+
+# 区块链学习
+https://github.com/chaozh/awesome-blockchain-cn
+https://github.com/coinpride/CryptoList
+
+# 一个 HTTP 命令行客户端
+https://github.com/jakubroztocil/httpie
+
+# 可通过简单的命令行来快速完成文件共享操作
+https://github.com/dutchcoders/transfer.sh
+
+# stegify 一款神奇的命令行工具，能将任意文件隐藏到图片里面
+https://github.com/DimitarPetrov/stegify
+
+# Windows 开源代码列表
+https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md
+
+# linux开源软件列表，包括学习资料
+https://github.com/luong-komorebi/Awesome-Linux-Software
+
+# k8s博客
+https://github.com/findsec-cn/
+
+# 可视化机器学习调试
+https://github.com/microsoft/tensorwatch
+
+# k8s的部署(CKA及CKAD认证考试)
+https://github.com/opsnull/follow-me-install-kubernetes-cluster
+https://kubernetes.feisky.xyz/
+
+# 开源的AI补全工具
+https://github.com/zxqfl/TabNine
+
+# 阿波罗11号登陆指令集
+https://github.com/chrislgarry/Apollo-11
+
+# 数据可视化工具
+https://github.com/metabase/metabase
+
+# 安卓模拟器列表
+https://github.com/WuFengXue/android-emulator
+
+# linux内部的事件通知机制
+https://github.com/rvoicilas/inotify-tools
+
+# 3d增强功能
+https://github.com/mesa3d/mesa
+
+# 方舟编译器
+https://github.com/Himself65/OpenArkCompiler
+
+# nps是一款轻量级、高性能、功能强大的内网穿透代理服务器
+https://github.com/cnlh/nps
+
+# learn-go-with-tests，通过编写测试来驱动go学习
+https://github.com/quii/learn-go-with-tests
+
+# 微软开源的stl
+https://github.com/microsoft/STL
+
+# 提供各种图表库绘制图表
+https://www.advsofteng.com/download.html
+
+# # ReactiveX 是一个专注于异步编程与控制可观察数据（或者事件）流的API。
+https://github.com/ReactiveX/RxCpp
+
+机器学习笔记
+https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes
+
+# IP端口扫描器
+https://github.com/robertdavidgraham/masscan.git
+
+# linux源码笔记
+https://github.com/wx672/lecture-notes?files=1
+
+# ipsec-vpn的库
+https://github.com/xelerance/Openswan.git
+
+# openvpn的库
+https://github.com/OpenVPN/openvpn.git
+
+# zeak，一款开源的IDS的库
+https://github.com/zeek/zeek
