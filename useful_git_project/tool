@@ -354,3 +354,15 @@ https://github.com/kernelslacker/trinity.git
 
 # linux正确性测试
 https://github.com/linux-test-project/ltp.git
+
+# 中文man手册
+https://github.com/man-pages-zh/manpages-zh
+
+# 最新的man手册
+https://www.man7.org/index.html
+
+# 金步国作品集，kernel翻译
+http://www.jinbuguo.com/
+
+# 官方的man手册
+https://github.com/mkerrisk/man-pages.git
