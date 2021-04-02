@@ -1,0 +1,65 @@
+# linux下的定时任务，可以用此命令定时执行脚本
+
+# 进入定时列表编辑
+crontab -e
+
+
+# 案例一：每隔10秒执行一次
+*/1 * * * * sh /root/shell/aa.sh
+*/1 * * * * sleep 10 && sh /root/shell/aa.sh
+*/1 * * * * sleep 20 && sh /root/shell/aa.sh
+*/1 * * * * sleep 30 && sh /root/shell/aa.sh
+*/1 * * * * sleep 40 && sh /root/shell/aa.sh
+*/1 * * * * sleep 50 && sh /root/shell/aa.sh
+
+
+
+crontab任务配置基本格式：
+*   *　 *　 *　 *　　command
+第1列表示分钟0～59 每分钟用 * 或者 */1 表示
+第2列表示小时0～23（0表示0点）
+第3列表示日期1～31
+第4列表示月份1～12
+第5列标识号星期0～6（0，7都可表示星期天）
+第6列要运行的命令或执行shell脚本
+
+
+# 每天 02:00 执行任务
+0 2 * * * /bin/sh backup.sh
+
+# 每天 5:00和17:00执行任务
+0 5,17 * * * /scripts/script.sh
+
+# 每分钟执行一次任务
+  * * * * *  /scripts/script.sh
+
+# 每周日 17:00 执行任务
+0 17 * * sun  /scripts/script.sh
+
+# 每 10min 执行一次任务
+*/10 * * * * /scripts/monitor.sh
+
+# 在特定的某几个月执行任务
+  * * * jan,may,aug * /script/script.sh
+
+# 在特定的某几天执行任务， 在每周五、周日的17点执行任务
+0 17 * * sun,fri /script/scripy.sh
+
+# 每四个小时执行一个任务
+0 */4 * * * /scripts/script.sh
+
+# 每周一、周日执行任务
+0 4,17 * * sun,mon /scripts/script.sh
+
+# 每个30秒执行一次任务
+* * * * * /scripts/script.sh
+* * * * *  sleep 30; /scripts/script.sh
+
+# 多个任务在一条命令中配置
+* * * * * /scripts/script.sh; /scripts/scrit2.sh
+
+# 每年执行一次任务, 它会在每年的第一分钟内执行，通常我们可以用这个发送新年的问候。
+@yearly /scripts/script.sh
+
+# 系统重启时执行
+@reboot /scripts/script.sh
