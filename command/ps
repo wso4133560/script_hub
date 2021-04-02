@@ -1,0 +1,32 @@
+# 显示所有包含其他使用者的行程
+ps -aux
+
+# 查看特定用户
+ps -u [用户]
+
+# 使用 -C 参数，后面跟你要找的进程的名字
+ps -C [进程名称]
+
+# 查看详细信息
+ps -f -C [进程名称]
+
+# 使用cpu或者内存排序
+ps -aux --sort=-pcpu,+pmem
+
+# 取前5个
+ps -aux --sort=-pcpu,+pmem | head 5
+
+# 显示进程树
+ps -aux --forest
+
+# 显示进程下的所有线程
+ps -p [进程id] -L -o pcpu,pmem,pid,tid,time,tname,cmd
+
+# 有时候我们希望以树形结构显示进程，可以使用 -axjf 参数。
+ps -axjf
+
+# 查看谁登录服务器:
+ps -eo pid,user,args
+
+# 系统管理员想要查看由root用户运行的进程和这个进程的其他相关信息时
+ps -U root -u root u
