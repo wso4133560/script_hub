@@ -1,0 +1,8 @@
+# 创建磁盘文件
+qemu-img create -f qcow2 fedora.img 10G
+
+# 通过iso启动磁盘并且安装系统到img中
+qemu-system-x86_64 -m 1024 -enable-kvm fedora.img -cdrom ./Fedora-Live-Desktop-x86_64-20-1.iso
+
+# 启动安装好后的虚拟机
+qemu-system-x86_64 -m 1024 -enable-kvm fedora.img
