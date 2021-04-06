@@ -1,0 +1,109 @@
+  #!/bin/bash
+   RESDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+   QEMUSW="../qemu/build/x86_64-softmmu/qemu-system-x86_64"
+   ROOTFS="disk.img"
+   KERNEL="/boot/vmlinuz-5.10.0-trunk-amd64"
+   INITRD="/boot/initrd.img-5.10.0-trunk-amd64"
+   SHRDIR=$RESDIR/share
+   CORES=$(nproc)
+   echo 资源路径：$RESDIR
+   echo 内核：$KERNEL
+   echo 内存盘：$INITRD
+   echo 根文件系统：$ROOTFS。
+   start_bridge() {
+       sudo brctl addbr br0
+       sudo brctl addif br0 enp7s0f2
+       sudo ifconfig br0 192.168.11.1
+   }
+   args=(
+       -enable-kvm
+       -cpu host
+       -smp ${CORES},sockets=1,cores=${CORES},threads=1
+       -m 4G
+       -drive file=$ROOTFS,format=raw,if=none,id=drive-virtio-disk0
+       -device virtio-blk-pci,drive=drive-virtio-disk0,id=virtio-disk0
+   ##    systemd.unit=multi-user.target
+       #-device virtio-balloon,bus=pci.0,addr=0x2
+       #-nographic
+       #-display egl-headless,rendernode=/dev/dri/card0
+       #-display egl-headless,gl=on,rendernode=/dev/dri/renderD128
+       #-spice unix,addr=/run/user/1000/qemu/ArchKDE/spice.sock,disable-ticketing
+       #-device virtio-serial-pci
+       #-spice port=5999,disable-ticketing
+       #-device usb-tablet
+   ##   使用usb-tablet以解决鼠标偏移问题
+       -k en-us
+       -fsdev local,security_model=passthrough,id=fsdev0,path=$SHRDIR
+       -device virtio-9p-pci,fsdev=fsdev0,mount_tag=hostshare
+       -netdev user,id=net0
+       -device virtio-net,netdev=net0,id=net0,mac=52:54:00:c9:18:27
+   #    -netdev tap,br=br0,helper=/usr/local/libexec/qemu-bridge-helper,id=tap0
+   #    -device virtio-net-pci,netdev=tap0,bus=pci.0,addr=0x8
+       #-serial tcp::9090,server,nowait
+       #-serial stdio
+       #-serial telnet::3333,server,nowait
+       -device virtio-vga
+       #-device ich9-intel-hda,id=sound0,bus=pci.0,addr=0x7
+       #-device hda-duplex,id=sound0-codec0,bus=sound0.0,cad=0
+       #-s
+   )
+   set_graph=""
+   while getopts "kvd" opt
+   do
+     case $opt in
+       k)
+           echo "enable extend kernel"
+           args[${#args[*]}]="-kernel"
+           args[${#args[*]}]="${KERNEL}"
+           args[${#args[*]}]="-initrd"
+           args[${#args[*]}]="${INITRD}"
+           args[${#args[*]}]="-append"
+           args[${#args[*]}]="root=/dev/vda5 ro 3"
+           # args[${#args[*]}]="root=/dev/vda5 notc ro console=ttyS0"
+           # args[${#args[*]}]="root=UUID=c660bd02-f066-45a4-b0b3-2a52ded82dbb ro video=1280x720@60m memmap=2G$0G console=ttyS0"
+       ;;
+       v)
+           echo "enable vnc,port:5900"
+           args[${#args[*]}]="-vnc"
+           args[${#args[*]}]=":0"
+           args[${#args[*]}]="-display"
+           args[${#args[*]}]="egl-headless,rendernode=/dev/dri/renderD128"
+   #        args[${#args[*]}]="-nographic"
+           set_graph="yes"
+       ;;
+       d)
+           echo "enable sdl"
+           args[${#args[*]}]="-display"
+           args[${#args[*]}]="sdl,gl=on"
+           set_graph="yes"
+       ;;
+     esac
+   done
+   if [ "${set_graph}" != "yes" ];
+   then
+       echo "enable sdl"
+       args[${#args[*]}]="-display"
+       args[${#args[*]}]="sdl,gl=on"
+       set_graph="yes"
+   fi
+   echo 启动参数：${args[@]}
+   #start_bridge
+   if [ "$1" == "-g" ];
+   then
+       passwd=1
+       args[1]='\"root=/dev/vda rw console=ttyS0 notc\"'
+       gdb_args="set args ${args[@]} -serial telnet::3333,server,nowait"
+       expect -c "
+       set timeout 2000;
+       spawn sudo gdb $QEMUSW
+       expect {
+           \"*sudo*\" {send \"${passwd}\r\"}
+           eof {exit 0;}
+       };
+       expect \"*(gdb)*\"
+       send \"${gdb_args}\r\"
+       interact
+       "
+   else
+       sudo ${QEMUSW} "${args[@]}"
+   fi
