@@ -1,0 +1,3 @@
+# 查看显卡显存
+lspci | grep VGA
+lspci -v -s 01:00.0
