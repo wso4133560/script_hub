@@ -366,3 +366,21 @@ http://www.jinbuguo.com/
 
 # 官方的man手册
 https://github.com/mkerrisk/man-pages.git
+
+# switch模拟器
+https://github.com/yuzu-emu/yuzu
+
+# C++单元测试框架
+https://github.com/catchorg/Catch2
+
+# C/C++开源格式化库
+https://github.com/fmtlib/fmt
+
+# 现代C/C++的json
+https://github.com/nlohmann/json
+
+# Zstandard是一种快速的无损压缩算法
+https://github.com/facebook/zstd
+
+# 百度开源脑图
+https://github.com/NaoTu/DesktopNaotu
