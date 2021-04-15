@@ -384,3 +384,25 @@ https://github.com/facebook/zstd
 
 # 百度开源脑图
 https://github.com/NaoTu/DesktopNaotu
+
+# 全国大学生比赛题目
+https://github.com/oscomp?page=2
+
+
+# x86-32和 x86-64的快速解码器和 x86-64的编码器
+https://github.com/aengelke/fadec/tree/4f2366afd198b30c3ec335667c65a2f1b6725dd5
+
+# BinOpt —自指导运行时二进制优化的库
+https://github.com/aengelke/binopt
+
+# 基于LLVM的二进制专门化工具，它使用Rellume将原始功能提升到LLVM-IR
+https://github.com/aengelke/binopt/tree/master/rewriter/dbll
+
+# Rellume —将x86-64提升到LLVM IR
+https://github.com/aengelke/rellume.git
+
+# 低级重写器，专注于缩短重写时间，同时仍在进行完整的功能分析和优化
+https://github.com/davidhildenbrand/drob.git
+
+# 跟踪二进制重写器，着重于编译时性能，同时还进行无限循环展开和内联
+https://github.com/caps-tum/dbrew
