@@ -1,0 +1,14 @@
+# virsh查看所有虚拟机
+virsh list --all
+
+# 查看内存大小
+virsh dominfo [虚拟机名称] | grep memory
+
+# 关闭虚拟机
+virsh shutdown [虚拟机名称]
+
+# 编辑虚拟机配置文件[内存，cpu数量等]
+virsh edit [虚拟机名称]
+
+# 从配置文件启动虚拟机
+virsh create /etc/libvirt/qemu/vm1-clone.xml

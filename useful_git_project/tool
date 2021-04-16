@@ -406,3 +406,9 @@ https://github.com/davidhildenbrand/drob.git
 
 # 跟踪二进制重写器，着重于编译时性能，同时还进行无限循环展开和内联
 https://github.com/caps-tum/dbrew
+
+# x64到arm64的二进制翻译
+https://github.com/aengelke/instrew.git
+
+# 使用Web浏览器监视和管理多个Linux服务器的强大工具
+https://github.com/cockpit-project/cockpit
