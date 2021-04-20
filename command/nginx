@@ -1,0 +1,17 @@
+# 测试配置文件是否正确
+sudo nginx -t
+
+# 查看服务启动状态
+systemctl status nginx.service
+
+# 子页面路径
+/etc/nginx/conf.d
+
+# html的资源路径
+/var/www/
+
+# 日志路径
+/var/log/nginx/
+
+# nginx主路径
+/etc/nginx/nginx.conf
