@@ -12,3 +12,51 @@ virsh edit [虚拟机名称]
 
 # 从配置文件启动虚拟机
 virsh create /etc/libvirt/qemu/vm1-clone.xml
+
+# 进入串口
+virsh console [虚拟机名称]
+
+# 查看正在运行的虚拟主机列表
+virsh list 
+
+# 查看virt-install所支持的OS参数列表
+osinfo-query os 
+
+# 查看所有的虚拟机列表
+virsh list --all 
+
+# 查看虚拟机信息
+virsh dominfo [虚拟机名称]
+
+# 启动虚拟机
+virsh start [虚拟机名称] 
+
+# 关闭虚拟机
+virsh shutdown [虚拟机名称] 
+
+# 挂起虚拟机
+virsh suspend [虚拟机名称] 
+
+# 软重启（安全重启，相当于在虚拟机内部点击重启选项）虚拟机
+virsh reboot [虚拟机名称] 
+
+# 硬重启虚拟机（不安全，有可能数据丢失，相当于强制按主机上的重启按钮）
+virsh reset [虚拟机名称] 
+
+# 设置虚拟机随着宿主主机开机自动启动(开机自动启动的虚拟机配置文件会自动在目录/etc/libvirt/qemu/autostart/目录下生成)
+virsh autostart [虚拟机名称]
+
+# 取消开机自启动
+virsh autostart --disable [虚拟机名称] 
+
+# 强制关闭虚拟机电源
+virsh destroy [虚拟机名称]
+
+# 查看当前主机上hypervisor的链接路径
+virsh uri
+
+# 移除虚拟机定义，即从虚拟机列表中移除虚拟机 该命令只是删除/etc/libvirt/qemu/目录下名为ubuntuserver1604.xml的配置文件，并不会删除虚拟机磁盘文件
+virsh undefine [虚拟机名称] 
+
+# 通过虚拟机配置文件重新定义虚拟机
+virsh define [虚拟机名称]
