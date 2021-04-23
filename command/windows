@@ -1,0 +1,7 @@
+# 查找某个格式的文件并打印出来
+for /r [文件夹] %i in (*.inc) do @echo %i
+
+# 将当前文件夹下所有文件目录输入到一个文件中
+@echo off  
+tree/f>index.txt
+start /b notepad index.txt
