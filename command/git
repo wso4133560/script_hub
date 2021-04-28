@@ -1,2 +1,8 @@
 # 下载完所有子模块
 git submodule update --init --recursive
+
+# 查看所有分支的命令
+git branch -a
+
+# 切换远程分支
+git checkout -b 本地分支名 origin/远程分支名
