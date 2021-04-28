@@ -412,3 +412,6 @@ https://github.com/aengelke/instrew.git
 
 # 使用Web浏览器监视和管理多个Linux服务器的强大工具
 https://github.com/cockpit-project/cockpit
+
+# 多ISO装机软件，仅需要支持将iso文件拷贝进去即可装机
+https://github.com/ventoy/Ventoy
