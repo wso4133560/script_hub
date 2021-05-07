@@ -1,0 +1,2 @@
+# 设置临时的链接库路径
+export LD_LIBRARY_PATH=[动态库路径]
