@@ -415,3 +415,12 @@ https://github.com/cockpit-project/cockpit
 
 # 多ISO装机软件，仅需要支持将iso文件拷贝进去即可装机
 https://github.com/ventoy/Ventoy
+
+# 做链接优化的一个程序，可以通过perf优化性能，大量使用LLVM
+https://github.com/facebookincubator/BOLT
+
+# 支持c++及时生成的库，基于LLVM实现
+https://github.com/jmmartinez/easy-just-in-time
+
+# 标准的README
+https://github.com/RichardLitt/standard-readme
