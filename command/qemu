@@ -10,3 +10,6 @@ qemu-system-x86_64 -m 1024 -enable-kvm fedora.img
 # 先创建一个磁盘文件
 # 使用virt-install安装程序
 sudo virt-install --check path_in_use=off --virt-type kvm --name [新的virsh虚拟机] --ram 4096 --cdrom=/home/uos/tanglin/focal-desktop-arm64.iso --disk /var/lib/kimchi/isos/ubuntu.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux --os-variant=generic -vcpus 4
+
+# 扩容img文件使用下面命令给img文件追加50G空间：
+qemu-img resize $img +50G
