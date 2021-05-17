@@ -1,0 +1,11 @@
+# 挂载img磁盘
+sudo losetuo -P --show -f [磁盘名称]
+
+# 卸载loop文件
+sudo losetup -d [loop文件]
+
+# 查看loop里面的文件
+ls /dev/loop1
+
+# 挂载loop到mnt
+mount /dev/loop1p1 /mnt
