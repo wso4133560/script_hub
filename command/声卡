@@ -1,0 +1,2 @@
+# 初始化声卡
+sudo alsactl init
