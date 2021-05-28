@@ -1,0 +1,33 @@
+# fstrace的例子
+cd /sys/kernel/debug/tracing
+echo function > current_tracer
+echo [函数名] > set_ftrace_filter
+echo 1 > tracing_on
+echo 0 > tracing_on
+cat trace   # 查看结果
+
+# 使用trace-cmd跟踪一个函数。
+sudo apt install trace-cmd
+sudo trace-cmd record -p function -l [内核函数]
+sudo trace-cmd report
+
+# 使用trace-cmd跟踪一个进程
+sudo trace-cmd record -p function -P [进程ID]
+sudo trace-cmd report
+
+# 查看此函数是否能够trace
+sudo trace-cmd list -f [函数名]
+
+# 函数列表
+sudo trace-cmd list -f
+
+# 进程图追踪
+sudo trace-cmd record -p function_graph -P [进程ID]
+
+# 跟踪事件
+sudo cat /sys/kernel/debug/tracing/available_events
+sudo trace-cmd record -e sched:sched_switch
+sudo trace-cmd report
+
+# fstrace的使用工具例子
+https://github.com/brendangregg/perf-tools
