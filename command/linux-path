@@ -1,0 +1,9 @@
+# fstrace路径
+/sys/kernel/debug/tracing
+
+# 内核编译参数路径
+cat /boot/config-$(uname -r)
+
+# debian系列源路径
+/etc/apt/source.list
+
