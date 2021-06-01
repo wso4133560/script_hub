@@ -1,0 +1,67 @@
+# 安装mysql的服务端和客户端
+sudo apt install mysql-server
+
+# 安装客户端
+sudo apt install mysql-client
+
+# 启动服务
+sudo service mysql start
+
+# 重启服务
+sudo service mysql restart
+
+# 配置目录
+/etc/mysql/mysql.cnf
+/etc/mysql/mysql.conf.d/mysqld.cnf
+
+# 修改mysql的密码
+1.sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+进入配置文件，添加一行：skip-grant-tables
+允许不用密码登录进去mysql
+
+2.service mysql restart
+
+3.输入mysql -u root -p 进入mysql
+
+4.设置root密码
+
+use mysql
+
+update user set authentication_string=password("你的密码") where user="root"
+
+flush privileges
+
+5.进入配置文件注释掉skip-grant-tables这句
+
+
+# wsl修改mysql密码
+1.重新修改配置文件，使用无密码登录mysql （上边步骤1，2，3）
+
+2.输入：
+
+use mysql;
+
+select user,plugin from user;
+
+查看root 的 plugin 字段类型为auth_socket
+
+3.修改类型和其他用户一样：
+
+update user set authentication_string=password("你的密码"),plugin='mysql_native_password' where user='root';
+
+4.quit退出mysql，修改配置文件，使用密码登录
+
+# 运行mysql远程访问
+1.sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+
+2.注释掉 bind-address  = 127.0.0.1 一行
+
+# 8.0以上版本，password失效，使用下述修改密码
+update user set authentication_string="1", plugin='mysql_native_password' where user='root';
+flush privileges;
+
+1. 运行之前先清空密码
+update user set authentication_string='' where user='root';
+2. 成功后，删除配置文件运行代码
+alter user 'root'@'localhost' identified by '设置的新密码'
+flush privileges;
