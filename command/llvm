@@ -3,3 +3,6 @@ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_TARGETS_TO_BUILD="X86;ARM" -DL
 
 # 编译动态库
 cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON -DCMAKE_BUILD_TYPE=MinSizeRel
+
+# 编译llvm-mctoll的库
+cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_ENABLE_PROJECTS="clang" -DLLVM_TARGETS_TO_BUILD="X86;ARM"
