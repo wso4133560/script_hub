@@ -1,0 +1,38 @@
+# bpftrace的tool里面的东西
+bashreadline.bt             打印系统中正在运行的bash文件
+biolatency.bt               打印I/O的块的延时时间
+biosnoop.bt                 显示每个I/O块的延时
+biostacks.bt                显示磁盘I/O延迟与初始化堆栈
+bitesize.bt                 bitesize以柱状图形式显示磁盘I/O大小
+capable.bt                  跟踪安全能力检查
+cpuwalk.bt                  cpuwalk会在哪些cpu进程上运行，并打印一个摘要柱状图
+dcsnoop.bt                  跟踪目录条目缓存(dcache)查找 ？
+execsnoop.bt                通过exec()系统调用跟踪新进程 ？
+gethostlatency.bt           这可以用于识别DNS延迟，通过识别远程主机名查找慢了多少，这使用了用户级函数和寄存器的动态跟踪，并可能需要修改以匹配您的软件和处理器架构
+killsnoop.bt                killsnoop kill()系统调用发出的跟踪信号。对于Linux，使用bpftrace和eBPF。
+loads.bt                    loads打印平均负载。这是一个简单的工具，它输出系统平均负载，每个输出到小数点后三位(这并不重要)，作为从bpftrace获取内核结构的演示
+mdflush.bt                  mdflush跟踪mdflush事件。 ？
+naptime.bt                  查看sleep的调用
+oomkill                     这将跟踪内核内存不足杀手，并打印基本细节
+opensnoop.bt                opensnoop跟踪open()系统调用。
+pidpersec.bt                pidpersec计数新进程(通过fork)。
+runqlat.bt                  CPU调度器以直方图的形式运行队列延迟.
+runqlen.bt                  cpu调度程序运行队列长度的直方图。
+setuids.bt                  setuids -跟踪setuid系统调用:权限升级。
+statsnoop.bt                跟踪stat()系统调用。
+swapin.bt                   按进程显示交换。
+syncsnoop.bt                跟踪各种系统调用sync()。
+syscount.bt                 系统调用计数。
+tcpaccept.bt                跟踪TCP accept ()
+tcpconnect.bt               跟踪TCP连接()。
+tcpdrop.bt                  跟踪TCP内核丢弃的数据包/段。
+tcplife.bt                  使用连接细节跟踪TCP会话寿命
+tcpretrans.bt               跟踪或计数TCP重传
+tcpsynbl.bt                 以直方图的形式显示TCP SYN积压。
+threadsnoop.bt              列出新创建的线程。
+vfscount.bt                 VFS调用计数("vfs_*")
+vfsstat.bt                  用每秒的摘要计算一些VFS调用。
+writeback.bt                跟踪文件系统回写事件的详细信息。
+xfsdist.bt                  总结XFS操作延迟。
+
+
