@@ -1,6 +1,9 @@
 # bpf语言的重要函数
 https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md
 
+# bpf的例子
+https://github.com/brendangregg/bpf-perf-tools-book.git
+
 # bpftrace的tool里面的东西
 bashreadline.bt             打印系统中正在运行的bash文件
 biolatency.bt               打印I/O的块的延时时间
