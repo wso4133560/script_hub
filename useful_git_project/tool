@@ -427,3 +427,12 @@ https://github.com/RichardLitt/standard-readme
 
 # llvm ir的超级优化器
 https://github.com/google/souper
+
+# 查看缓存
+https://github.com/silenceshell/hcache
+
+# 获取文件缓存信息
+https://github.com/tobert/pcstat
+
+# bpf的例子
+https://github.com/brendangregg/bpf-perf-tools-book.git

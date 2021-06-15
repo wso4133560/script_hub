@@ -4,5 +4,8 @@ https://scp-wiki-cn.wikidot.com/
 # 邮件列表
 http://vger.kernel.org/vger-lists.html
 
-# 美国露营的网站
-https://usa.wikicamps.co/
+# intel的内存检测
+https://github.com/intel/intel-cmt-cat
+
+# mpam的内存工具
+https://github.com/ARM-software/arm-enterprise-acs/tree/master/mpam
