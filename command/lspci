@@ -1,3 +1,6 @@
 # 查看显卡显存
 lspci | grep VGA
 lspci -v -s 01:00.0
+
+# 查看详细信息
+lspci -s [01:00.0] -xxx
