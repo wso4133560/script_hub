@@ -1,0 +1,11 @@
+# 官方网站
+https://www.gdbgui.com/
+
+python3 -m pip install --user pipx
+python3 -m userpath append ~/.local/bin
+python3 -m pipx install gdbgui
+python3 -m pipx upgrade gdbgui
+# 卸载gdbgui
+python3 -m pipx uninstall gdbgui
+
+# 
