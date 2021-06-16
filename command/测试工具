@@ -1,0 +1,31 @@
+# 针对linux的综合性能测试工具
+unixbench
+https://github.com/kdlucas/byte-unixbench
+lmbench
+https://github.com/intel/lmbench
+
+# 针对linux系统正确性测试工具
+ltp
+https://github.com/linux-test-project/ltp
+trinity
+https://github.com/kernelslacker/trinity
+
+# web模糊测试工具
+alf
+
+angr
+
+asan
+
+syzkaller
+
+kasan
+
+# sql注入工具
+sqlmap
+
+# 攻击web 应用程序的集成平台工具
+Burpsuite
+
+# 渗透工具, 安全漏洞检测工具
+Metasploit
