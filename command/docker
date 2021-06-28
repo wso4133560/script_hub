@@ -58,3 +58,12 @@ docker import [tar包] [镜像名字]
 
 # docker 登录
 docker login --username=[账号] [url]
+
+# docker映射文件夹
+docker run -d -it -v [宿主机绝对路径]:[docker内部文件夹例如/mnt] [镜像ID] /bin/bash
+
+# docker以root权限运行容器
+sudo docker exec -ti -u root [容器ID] bash
+
+# docker的run命令，官方文档
+https://docs.docker.com/engine/reference/run/

@@ -436,3 +436,10 @@ https://github.com/tobert/pcstat
 
 # bpf的例子
 https://github.com/brendangregg/bpf-perf-tools-book.git
+
+# 程序动态分析工具
+https://github.com/DynamoRIO/dynamorio
+DynamoRIO 是一个运行时代码操作系统，它支持在程序执行时对程序的任何部分进行代码转换。DynamoRIO 导出用于构建动态工具的接口，用于多种用途：程序分析和理解、分析、检测、优化、翻译等。 与许多动态工具系统不同，DynamoRIO 不限于插入标注/蹦床，并允许任意修改通过强大的 IA-32/AMD64/ARM/AArch64 指令操作库来处理应用指令。DynamoRIO 提供对运行在股票操作系统（Windows、Linux 或 Android）和商用 IA-32、AMD64、ARM 和 AArch64 硬件上的未修改应用程序的高效、透明和全面的操作。Mac OSX 支持正在进行中。
+
+# 物体识别软件
+https://github.com/PaddlePaddle/PaddleClas

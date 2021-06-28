@@ -6,3 +6,12 @@ https://www.kernel.org/
 
 一个借鉴很多项目的自己写的linux的操作系统，有视频等信息
 https://github.com/SerenityOS/serenity/
+
+# linux提供的api列表文档
+https://www.kernel.org/doc/htmldocs/kernel-api/
+
+# Procmon为Linux开发人员提供了一种方便而有效的方法来跟踪系统上的系统调用活动。
+https://github.com/Sysinternals/ProcMon-for-Linux
+
+# wsl的源码
+https://github.com/microsoft/WSL2-Linux-Kernel/releases
