@@ -60,3 +60,11 @@ virsh undefine [虚拟机名称]
 
 # 通过虚拟机配置文件重新定义虚拟机
 virsh define [虚拟机名称]
+
+# 给虚拟机添加硬盘
+virsh edit [虚拟机名称]
+<disk type='block' device='disk'>
+  <driver name='qemu' type='raw'/>
+  <source dev='/dev/sda'/>
+  <target dev='hdb' bus='ide'/>
+</disk>
