@@ -443,3 +443,6 @@ DynamoRIO 是一个运行时代码操作系统，它支持在程序执行时对�
 
 # 物体识别软件
 https://github.com/PaddlePaddle/PaddleClas
+
+# 界面可视化调试代码
+https://github.com/cyrus-and/gdb-dashboard
