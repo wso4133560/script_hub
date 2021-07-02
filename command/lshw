@@ -1,0 +1,2 @@
+# 查看显卡信息
+sudo lshw -C video
