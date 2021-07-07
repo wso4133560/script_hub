@@ -1,2 +1,5 @@
+# 初始化模块
+sudo modprobe snd-hda-intel
+
 # 初始化声卡
 sudo alsactl init
