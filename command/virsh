@@ -57,6 +57,10 @@ virsh uri
 
 # 移除虚拟机定义，即从虚拟机列表中移除虚拟机 该命令只是删除/etc/libvirt/qemu/目录下名为ubuntuserver1604.xml的配置文件，并不会删除虚拟机磁盘文件
 virsh undefine [虚拟机名称] 
+virsh undefine --nvram [虚拟机名称]
+# 删除硬盘
+sudo rm -f /var/lib/libvirt/images/devstack.img
+
 
 # 通过虚拟机配置文件重新定义虚拟机
 virsh define [虚拟机名称]
