@@ -7,3 +7,5 @@ cat /boot/config-$(uname -r)
 # debian系列源路径
 /etc/apt/source.list
 
+# 磁盘挂载目录
+vim /etc/fstab
