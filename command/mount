@@ -24,3 +24,6 @@ cat /proc/filesystems
 
 # umount
 umount [文件夹]
+
+# mount iso文件
+sudo mount -o loop [iso文件] [文件夹]
