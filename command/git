@@ -11,4 +11,4 @@ git checkout -b 本地分支名 origin/远程分支名
 git rm -f [文件名]
 
 # 克隆特定分支
-git -b [分支] [链接]
+git clone [链接] -b [分支]
