@@ -1,0 +1,7 @@
+# 编辑源文件
+sudo apt edit-source
+
+# 修正依赖包
+sudo apt-get install aptitude
+
+sudo aptitude install [包名]
