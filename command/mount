@@ -27,3 +27,6 @@ umount [文件夹]
 
 # mount iso文件
 sudo mount -o loop [iso文件] [文件夹]
+
+# mount将另一个文件夹挂载到当前文件夹
+mount --bind [olddir] [newdir]
