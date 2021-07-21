@@ -5,3 +5,6 @@ sudo apt edit-source
 sudo apt-get install aptitude
 
 sudo aptitude install [包名]
+
+# 完整升级系统
+sudo apt full-upgrade -y
