@@ -8,3 +8,8 @@ sudo aptitude install [包名]
 
 # 完整升级系统
 sudo apt full-upgrade -y
+
+# 查询某个库
+sudo apt-get install apt-file
+apt-file update
+apt-file search libXXX.so
