@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+spawn proxychains git push
+expect "Username"
+send "xxxx\n"
+expect "Password"
+send "xxxx\n"
+expect eof
