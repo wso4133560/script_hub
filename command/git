@@ -19,3 +19,6 @@ git mv --force AppTest.java apptest.java
 git add apptest.java
 git commit –m "rename"
 git push origin XXX(分支)
+
+# 下载被删除掉的文件
+git checkout [文件路径]
