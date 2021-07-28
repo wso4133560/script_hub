@@ -22,3 +22,6 @@ git push origin XXX(分支)
 
 # 下载被删除掉的文件
 git checkout [文件路径]
+
+# 使用令牌环push
+git push https://[Personal Access Token]@github.com/[User Name]/[Repository Name].git
