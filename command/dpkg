@@ -13,3 +13,5 @@ dpkg -l
 # 列出deb包的内容
 dpkg -c [deb包]
 
+# 找出编译依赖的软件包
+dpkg-depcheck -d ./configure
