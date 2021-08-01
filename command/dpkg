@@ -1,0 +1,15 @@
+# deb解包命令
+dpkg -X [deb包] [解包的文件夹]
+
+# 安装deb包
+dpkg -i [deb包]
+
+# 卸载deb包
+dpkg -r [deb包]
+
+# 列出当前已安装的包
+dpkg -l
+
+# 列出deb包的内容
+dpkg -c [deb包]
+
