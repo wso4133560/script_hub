@@ -13,3 +13,6 @@ sudo apt full-upgrade -y
 sudo apt-get install apt-file
 apt-file update
 apt-file search libXXX.so
+
+# 下载某个包的源码
+apt source [包名]
