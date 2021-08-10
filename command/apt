@@ -20,3 +20,6 @@ apt source [包名]
 # 只下载某个包的命令，只下载不安装
 apt reinstall [包名] -d
 下载的位置在/var/cache/apt/archives
+
+# 查询是否有对应的源码包
+sudo apt-cache showsrc [包名]
