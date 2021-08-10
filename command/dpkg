@@ -1,6 +1,9 @@
 # deb解包命令
 dpkg -X [deb包] [解包的文件夹]
 
+# deb解控制信息
+dpkg -e [deb包] [解包的文件夹]
+
 # 安装deb包
 dpkg -i [deb包]
 
