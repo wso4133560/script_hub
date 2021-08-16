@@ -6,6 +6,8 @@ mount -l
 
 # mount文件系统的类型
 mount -t [文件系统] [设备] [文件夹]
+# 绑定proc的命令(适用于chroot)
+sudo mount -t proc proc ./proc
 
 # 列出mount的所有信息
 cat /proc/filesystems
