@@ -11,3 +11,6 @@ perf report -g
 # perf查看一级缓存消耗
 perf record -e L1-dcache-load-misses -p [进程id]
 perf report
+
+# perf执行命令
+perf record [命令] -e cpu-clock
