@@ -12,3 +12,6 @@ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LIN
 
 # 编译能够支持在arm上的llvm-qemu的库
 cmake -S llvm -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_FFI=ON -DLLVM_ENABLE_TERMINFO=OFF
+
+# llvm-qemu开启多线程jit的版本
+cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_BUILD_LLVM_DYLIB=ON   -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_FFI=ON -DLLVM_ENABLE_TERMINFO=OFF -DLLVM_ENABLE_THREADS=ON
