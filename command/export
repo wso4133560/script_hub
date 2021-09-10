@@ -11,3 +11,6 @@ export https_proxy="socks5://127.0.0.1:1080"
 
 # 所有代理
 export ALL_PROXY=socks5://127.0.0.1:1080
+
+# 使用其他路径二进制bin
+export PATH=[文件夹路径]:$PATH
