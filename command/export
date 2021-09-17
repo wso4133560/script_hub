@@ -14,3 +14,9 @@ export ALL_PROXY=socks5://127.0.0.1:1080
 
 # 使用其他路径二进制bin
 export PATH=[文件夹路径]:$PATH
+
+# gcc找到头文件的路径
+export C_INCLUDE_PATH=/usr/include/libxml2:$C_INCLUDE_PATH
+
+# g++找到头文件的路径
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/include/libxml2:/MyLib
