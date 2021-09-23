@@ -4,6 +4,9 @@ git submodule update --init --recursive
 # 查看所有分支的命令
 git branch -a
 
+# 删除某个分支
+git branch -d [分支名]
+
 # 切换远程分支
 git checkout -b 本地分支名 origin/远程分支名
 
