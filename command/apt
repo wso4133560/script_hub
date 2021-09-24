@@ -23,3 +23,6 @@ apt reinstall [包名] -d
 
 # 查询是否有对应的源码包
 sudo apt-cache showsrc [包名]
+
+# 下载一个包的所有的包
+sudo apt-get install --reinstall -d `apt-cache depends [包名] | grep "依赖" | cut -d: -f2 |tr -d "<>"`
