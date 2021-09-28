@@ -1,0 +1,6 @@
+# 快速正则命令
+
+# 安装命令
+sudo apt-get install silversearcher-ag
+
+ag [正则表达式]
