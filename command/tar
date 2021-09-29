@@ -5,7 +5,7 @@ tar zcvf [*.tar.gz] [文件夹]
 tar xvf [*.tar.gz]
 
 # 压缩命令tar.xz命令
-tar CfJ [*.tar.xz] [目标文件夹]
+tar cfJ [*.tar.xz] [目标文件夹]
 
 # 解压tar.xz命令
 tar -xcJf [*.tar.xz]
