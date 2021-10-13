@@ -1,0 +1,5 @@
+# 使用sed替换字符串
+sed -i "s/查找字段/替换字段/g" `grep 查找字段 -rl 路径` 文件名
+
+# 例子
+sed -i "s/\-buildmode=pie/ /g" `ag "\-buildmode=pie" -rl`
