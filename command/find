@@ -7,6 +7,9 @@ find . -type d
 # 根据文件权限来查找
 find . -perm [文件权限]
 
+# find可执行文件
+find [文件夹] -executable -type f
+
 # 在除dir0及子目录以外的目录下查找txt后缀文件
 find ./ -path './dir0*' -a -prune -o -name '*.txt' -print
 
