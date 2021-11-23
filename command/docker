@@ -46,6 +46,9 @@ tar -cvpf /tmp/system.tar --directory=/ --exclude=proc --exclude=sys --exclude=d
 # 将tar包生成镜像
 docker import [tar包] [镜像名字]
 
+# 使用 docker export 命令根据容器 ID 将镜像导出成一个文件
+docker export [容器ID] > hangger_server.tar
+
 # 使用docker-compose
  docker-compose -f [yaml] up
  SEND,docker-compose -f [yaml] down
