@@ -2,4 +2,5 @@
 https://manpages.debian.org/unstable/debootstrap/debootstrap.8.en.html
 
 # 可以下载debian的文件系统
-debootstrap stable [文件夹] http://deb.debian.org/debian/
+debootstrap [版本号] [文件夹] http://deb.debian.org/debian
+debootstrap stretch ./stretch-chroot http://deb.debian.org/debian
