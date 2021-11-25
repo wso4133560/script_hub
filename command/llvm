@@ -1,3 +1,6 @@
+# 编译参数的官方网站
+https://llvm.org/docs/CMake.html
+
 # llvm编译参数，编译出来全是*.a
 cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_TARGETS_TO_BUILD="X86;ARM" -DLLVM_ENABLE_PROJECTS="clang;lld" -DLLVM_ENABLE_ASSERTIONS=true -DCMAKE_BUILD_TYPE=Release
 
