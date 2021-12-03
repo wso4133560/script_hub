@@ -4,3 +4,5 @@ set follow-fork-mode [parent|child]
 parent: fork之后继续调试父进程，子进程不受影响。
 child: fork之后调试子进程，父进程不受影响。
 
+# 打开单步调试程序汇编的命令
+set disassemble-next-line on
