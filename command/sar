@@ -1,0 +1,5 @@
+# 查看网络设备的流量
+sar -n DEV 1
+
+# 查看TCP指标和TCP错误信息
+sar -n TCP,ETCP 1
