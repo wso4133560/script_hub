@@ -43,6 +43,6 @@ xfsdist.bt                  总结XFS操作延迟。
 
 # 展示系统中谁在执行命令
 sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { printf("%s -> %s\n", comm, str(args->filename)); }'
-# 展示新进程的创建
+# 展示新进程的创建(新进程的参数都能看得到)
 sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { join(args->argv); }'
 # bash运行的命令
