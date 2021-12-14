@@ -3,3 +3,12 @@ https://github.com/iovisor/bcc/tree/master/tools
 
 # 安装bcc命令
 sudo apt install bpfcc-tools linux-headers-$(uname -r)
+
+# 内核函数是否被调用
+sudo funccount-bpfcc [options] eventname
+eventname的语法是：
+name或者p:name: 对内核函数name()进行插桩
+lib:name或者p:lib:name: 对用户态lib库中的函数name()进行插桩
+path:name 对位于path路径下文件中的用户态函数name()进行插桩
+t:system:name: 对名位system:name的内核跟踪点进行插桩
+u:lib:name 对lib库名位name的USDT探针进行插桩
