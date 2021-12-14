@@ -4,7 +4,7 @@ https://github.com/iovisor/bcc/tree/master/tools
 # 安装bcc命令
 sudo apt install bpfcc-tools linux-headers-$(uname -r)
 
-# 内核函数是否被调用
+# 函数调用此处统计
 sudo funccount-bpfcc [options] eventname
 eventname的语法是：
 name或者p:name: 对内核函数name()进行插桩
@@ -12,3 +12,45 @@ lib:name或者p:lib:name: 对用户态lib库中的函数name()进行插桩
 path:name 对位于path路径下文件中的用户态函数name()进行插桩
 t:system:name: 对名位system:name的内核跟踪点进行插桩
 u:lib:name 对lib库名位name的USDT探针进行插桩
+# 对虚拟文件系统(VFS)内核函数进行计数
+funccount-bpfcc 'vfs_*'
+# 对TCP内核进行计数
+funccount-bpfcc 'tcp_*'
+# 统计每秒tcp发送函数的调用次数
+funccount-bpfcc -i 'tcp_send*'
+# 展示每秒块I/O事件数量:
+funccount-bpfcc -i 1 't:block:*'
+# 展示每秒新创建的进程数量:
+funccount-bpfcc -i 1 t:sched:sched_process_fork
+# 展示每秒libc中getaddrinfo()函数调用次数
+funccount-bpfcc -i 1 c:getaddrinfo
+
+# 内核函数栈调用跟踪
+stackcount [函数]
+# 内核函数调用火焰图
+stackcount -f -P -D 10 ktime_get > out.stackcount01.txt
+wc out.stackcount01.txt
+proxychains git clone http://github.com/brendangregg/FlameGraph
+cd FlameGraph
+./flamegraph.pl --hash --bgcolors=grey < ../out.stackcount01.txt > out.stackcount01.svg
+
+# 打印内核函数调用参数，返回值
+trace [options] probe [probe ...]
+probe的语法是：
+eventname(signature) (boolean filter) "format string", arguments
+trace 'do_sys_open "%s", arg2'
+# 跟踪do_nanosleep()，并且打印用户态调用栈
+sudo trace-bpfcc -U 'do_nanosleep "mode: %d", arg2 '
+
+# argdist语法，设定汇总输出的类型，被插桩的事件以及要进行汇总的数据
+argdist {-C|-H} [option] probe
+-C是频率统计
+-H是以2的幂为区间输出直方图
+probe的语法
+eventname(signature) [:type[,type...]:expr[,expr...][:filter]][#label]
+# 将内核函数vfs_read()的返回值以直方图的形式打印出来
+sudo argdist-bpfcc -H 'r::vfs_read()'
+# 以直方图方式对PID 1005进程的用户态调用libc的read()函数返回值进行统计并输出：
+sudo argdist-bpfcc -p [进程号] -H 'r:c:read()'
+# 根据调用号(syscall ID)对系统调用进行计数
+sudo argdist-bpfcc -C 't:raw_syscalls:sys_enter():int:args->id'
