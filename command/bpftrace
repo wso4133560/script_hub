@@ -41,4 +41,8 @@ vfsstat.bt                  用每秒的摘要计算一些VFS调用。
 writeback.bt                跟踪文件系统回写事件的详细信息。
 xfsdist.bt                  总结XFS操作延迟。
 
-
+# 展示系统中谁在执行命令
+sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { printf("%s -> %s\n", comm, str(args->filename)); }'
+# 展示新进程的创建
+sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { join(args->argv); }'
+# bash运行的命令
