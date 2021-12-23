@@ -30,3 +30,6 @@ ps -eo pid,user,args
 
 # 系统管理员想要查看由root用户运行的进程和这个进程的其他相关信息时
 ps -U root -u root u
+
+# 查看父进程，第二个数字就是父进程ID
+ps -ef | grep [进程ID]
