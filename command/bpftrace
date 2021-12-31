@@ -49,6 +49,8 @@ sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { join(args->argv); }'
 sudo bpftrace -e 'ur:/bin/bash:readline { printf("%s\n", str(retval)); } '
 # 监听系统的信号量
 sudo bpftrace -e 'kretprobe:dequeue_signal {printf("%d\n", retval);}'
+# 这个才是有用的，打印sig的值
+sudo bpftrace -e 'kprobe:complete_signal {printf("%d\n", arg0);}'
 
 
 
