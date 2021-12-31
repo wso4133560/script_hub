@@ -47,3 +47,8 @@ sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { printf("%s -> %s\n", co
 sudo bpftrace -e 'tracepoint:syscalls:sys_enter_execve { join(args->argv); }'
 # bash运行的命令
 sudo bpftrace -e 'ur:/bin/bash:readline { printf("%s\n", str(retval)); } '
+# 监听系统的信号量
+
+
+
+
