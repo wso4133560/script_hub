@@ -1,0 +1,4 @@
+# 添加make的打印信息
+-DCMAKE_VERBOSE_MAKEFILE=ON
+# 编译是否带有调试信息的宏
+-DCMAKE_BUILD_TYPE=[Debug|Release]
