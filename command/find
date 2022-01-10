@@ -53,3 +53,16 @@ find . -empty
 
 # 查找有相同内容的文件
 find . -samefile file1
+
+# 查找PE32+类型的文件
+#/bin/bash
+pe32_plus="PE32\\+"
+path=./
+for File in `find $path`
+do
+	filetype=`file $File`
+	echo $filetype|grep -E $pe32_plus>/dev/null 2>&1
+	if [ $? -eq 0 ];then
+		echo $filetype
+fi
+done
