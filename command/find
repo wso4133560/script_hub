@@ -66,3 +66,24 @@ do
 		echo $filetype
 fi
 done
+
+# 通过find来批量替换文件 PE32+替换成PE32
+#/bin/bash
+pe32_plus="PE32\\+"
+path=./
+r_path=../dotnet-sdk-5.0.210-win-x86/
+for File in `find $path -name *.dll`
+do
+	filetype=`file $File`
+	echo $filetype|grep -E $pe32_plus>/dev/null 2>&1
+	if [ $? -eq 0 ];then
+                r_file_path=""
+		for r_File in `find $r_path -name ${File##*/}`
+                do
+		    r_file_path=$r_File
+		    break
+	        done
+		`cp $r_file_path $File`
+		echo $filetype
+fi
+done
