@@ -1,0 +1,2 @@
+# 忽略证书认证
+wget [url] –-no-check-certificate
