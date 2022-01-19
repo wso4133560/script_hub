@@ -4,3 +4,5 @@ https://manpages.debian.org/unstable/debootstrap/debootstrap.8.en.html
 # 可以下载debian的文件系统
 debootstrap [版本号] [文件夹] http://deb.debian.org/debian
 debootstrap stretch ./stretch-chroot http://deb.debian.org/debian
+
+debootstrap --arch armhf buster /root/runtime/.tools/rootfs/arm http://ftp.debian.org/debian/
