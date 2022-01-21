@@ -9,3 +9,6 @@ tar cfJ [*.tar.xz] [目标文件夹]
 
 # 解压tar.xz命令
 tar -xvJf [*.tar.xz]
+
+# 解压tar.bz2文件
+tar jxvf [FileName.tar.bz2]
