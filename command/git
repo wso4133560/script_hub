@@ -53,3 +53,6 @@ git config --global https.proxy 'socks5://127.0.0.1:1080'
 # 取消代理：
 git config --global --unset http.proxy
 git config --global --unset https.proxy
+
+# 给sh文件添加可执行权限
+find -name "*.sh" -exec git update-index --chmod=+x {} \;
