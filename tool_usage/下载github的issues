@@ -1,0 +1,5 @@
+# 安装包
+sudo npm install -g git-issues-downloader
+
+# 下载文件
+npm [url]
