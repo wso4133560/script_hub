@@ -1,0 +1,14 @@
+# 安装mysql
+sudo apt install mysql-server
+
+# 启动命令
+sudo /etc/init.d/mysql start
+
+# 查看当前有的数据库
+SHOW DATABASES;
+
+# 使用某个数据库
+use [数据库名称]
+
+# 修改密码(不同版本的数据库方法不同)
+alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password By '1';

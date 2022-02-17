@@ -1,5 +1,9 @@
-# 安装包
-sudo npm install -g git-issues-downloader
+# 项目下载地址
+https://github.com/ETZhangSX/github_issue
 
-# 下载文件
-npm [url]
+# 准备数据库的账号密码
+修改database.py里面的账号密码
+
+# 运行schema.py脚本创建数据库
+
+

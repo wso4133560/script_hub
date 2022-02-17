@@ -1,0 +1,19 @@
+服务端安装served
+使用下面的命令安装nodejs
+apt install npm nodejs-legacy
+或
+apt install npm nodejs
+之后安装served
+npm install -g served
+启动服务器
+screen -S served
+在要下载的文件的目录下运行
+served 80
+服务端准备完毕
+ufw disable
+客户端准备
+直接安装axel
+yum install axel
+接着使用axel下载
+axel -n 100 http://ip/takeout.zip
+下面是我家的网速
