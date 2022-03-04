@@ -6,3 +6,6 @@
 例如：
 -finline
 -O0-fno-inline
+
+# 查看默认参数
+gcc -v
