@@ -1,0 +1,2 @@
+#查看默认优化参数
+ gcc -Q -O0 --help=optimizers 
