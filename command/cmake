@@ -2,3 +2,6 @@
 -DCMAKE_VERBOSE_MAKEFILE=ON
 # 编译是否带有调试信息的宏
 -DCMAKE_BUILD_TYPE=[Debug|Release]
+
+# 去除默认内联
+-DCMAKE_C_FLAGS="-fno-inline-functions" -DCMAKE_CXX_FLAGS="-fno-inline-functions" 
