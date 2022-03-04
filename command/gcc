@@ -1,2 +1,8 @@
-#查看默认优化参数
+# 查看默认优化参数
  gcc -Q -O0 --help=optimizers 
+
+# 关闭默认优化
+-O0-fno-OPTIMIZATION_NAME
+例如：
+-finline
+-O0-fno-inline
