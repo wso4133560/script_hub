@@ -9,3 +9,7 @@
 
 # 查看默认参数
 gcc -v
+
+# 定位过度优化的参数链接
+https://gcc.gnu.org/onlinedocs/gcc/Developer-Options.html
+例如gcc -O3 -fopt-info-inline-optimized-missed=inline.txt，这个可以讲内联的函数输出到inline.txt中
