@@ -21,3 +21,6 @@ dpkg-depcheck -d ./configure
 
 # 手动构建deb包 
 dpkg -b [文件夹]
+
+# 清楚配置文件
+ sudo dpkg --purge [包列表]
