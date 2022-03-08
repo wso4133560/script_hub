@@ -8,3 +8,13 @@
 
 # 多核编译
 cmake [编译参数] -- -j[核心数]
+
+# 交叉编译工具链
+-DTOOLCHAIN_PATH=[gnu库的路径]
+
+# 交叉编译工具
+-DCMAKE_C_COMPILER=[交叉编译器c的路径]
+-DCMAKE_CXX_COMPILER=[交叉编译器c的路径]
+
+# 目标机器的指令
+-DCMAKE_SYSTEM_PROCESSOR=[架构例如mips64]
