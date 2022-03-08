@@ -1,0 +1,2 @@
+# 搞性能的chroot
+sudo systemd-nspawn -D [chroot的rootfs]
