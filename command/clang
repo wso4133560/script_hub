@@ -1,0 +1,2 @@
+ # clang查看链接路径
+ clang -Xlinker -v
