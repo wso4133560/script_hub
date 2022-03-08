@@ -21,3 +21,6 @@ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_BUILD_LLVM_DYLIB=ON   -DCMAKE_
 
 # 编译带Libc的
 cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;lld;libcxx;libcxxabi;libunwind" -DCMAKE_BUILD_TYPE=Release
+
+# 删除make install安装后的文件
+xargs rm < install_manifest.txt
