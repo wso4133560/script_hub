@@ -24,3 +24,6 @@ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;lld;lib
 
 # 删除make install安装后的文件
 xargs rm -rf < install_manifest.txt
+
+# 使用龙芯交叉编译器
+cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_BUILD_LLVM_DYLIB=ON -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_TOOLCHAIN_FILE=mips.cmake
