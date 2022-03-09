@@ -6,3 +6,6 @@ child: fork之后调试子进程，父进程不受影响。
 
 # 打开单步调试程序汇编的命令
 set disassemble-next-line on
+
+# 批量打断点
+rbreak rb_*指令，找到了程序中所有以 tb_* 开头的函数
