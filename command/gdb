@@ -9,3 +9,7 @@ set disassemble-next-line on
 
 # 批量打断点
 rbreak rb_*指令，找到了程序中所有以 tb_* 开头的函数
+
+# 函数地址打断点
+当调试汇编程序，或者没有调试信息的程序时，经常需要在程序地址上打断点，方法为b *address。例如：
+(gdb) b *0x400522
