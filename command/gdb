@@ -20,3 +20,6 @@ set logging on
 
 # 自动反汇编接下来要执行的代码
 set disassemble-next-line on
+
+# 单步调试指令
+si命令
