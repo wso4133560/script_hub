@@ -23,3 +23,6 @@ set disassemble-next-line on
 
 # 单步调试指令
 si命令
+
+# 设置多次进入断点
+ignore [断点ID] [断点次数]
