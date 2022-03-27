@@ -15,3 +15,10 @@ use [数据库名称]
 
 # 修改密码(不同版本的数据库方法不同)
 alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password By '1';
+
+
+# MariaDB的修改密码方式
+[root@localhost ~]# mysql -uroot
+MariaDB [(none)]> use mysql;
+MariaDB [mysql]> SET password=PASSWORD('newpassward');
+MariaDB [mysql]> FLUSH PRIVILEGES;
