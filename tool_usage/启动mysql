@@ -4,6 +4,9 @@ sudo apt install mysql-server
 # 启动命令
 sudo /etc/init.d/mysql start
 
+# 第一次进入数据库
+sudo mysql -u root -p
+
 # 查看当前有的数据库
 SHOW DATABASES;
 
