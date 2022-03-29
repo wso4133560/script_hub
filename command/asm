@@ -1,0 +1,3 @@
+	# 直接运行asm的二进制
+  asm(".insn \n\t"
+		".word(0xEF380000) \n\t");
