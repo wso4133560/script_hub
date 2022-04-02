@@ -35,3 +35,9 @@ x/200i $pc-200
 
 # 打条件断点
 b [断点ID|断点位置] if [c语言的condition]
+
+# 线程锁
+set scheduler-locking off|on
+off:不锁定任何线程，如果在当前模式使用continue的话会启动所有线程
+on:打开线程锁，锁定其他线程，只有当前线程执行
+
