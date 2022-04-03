@@ -41,3 +41,5 @@ set scheduler-locking off|on
 off:不锁定任何线程，如果在当前模式使用continue的话会启动所有线程
 on:打开线程锁，锁定其他线程，只有当前线程执行
 
+# 根据地址查看函数符号
+info symbol [地址]
