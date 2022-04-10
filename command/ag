@@ -4,3 +4,7 @@
 sudo apt-get install silversearcher-ag
 
 ag [正则表达式]
+
+
+# 在特定文件格式下匹配字符串
+ag -G ".+\.java" "string-to-search" [文件夹路径]
