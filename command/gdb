@@ -49,3 +49,7 @@ watch *(int*)0x12345678
 
 # 执行很多次的命令
 [命令] [次数]
+
+# 如果有关实时事件 34 (SIG34) 的输出干扰使用 gdb 或 ddd 在 Linux 上进行调试，则可以将 GDB 配置为忽略这些事件：
+handle SIG34 pass
+handle SIG34 noprint
