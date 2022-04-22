@@ -3,3 +3,6 @@ valgrind --tool=memcheck [二进制文件]
 
 # 堆中的内存越界、踩内存、栈中的内存越界、非法指针使用、重复free
 valgrind --leak-check=full [二进制文件]
+
+# valgrind下载地址
+https://valgrind.org/downloads/?src=www.discoversdk.com
