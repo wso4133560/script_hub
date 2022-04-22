@@ -1,0 +1,7 @@
+# 检测内存泄漏编译与运行
+gcc -o memleak memleak.c
+valgrind --tool=memcheck ./memleak
+
+# 堆中的内存越界、踩内存、栈中的内存越界、非法指针使用、重复free
+ gcc -o invalidptr invalidptr.c -g
+valgrind --leak-check=full ./invalidptr
