@@ -2,10 +2,12 @@
  clang -Xlinker -v
 
 # 启用内存错误检查工具，编译参数
--fsanitize=address
+-Wc,-fsanitize=address
 
 # 打印堆栈信息
 -fno-omit-frame-pointer
 
 # 加上下面的才能保证得到运行结果
 ASAN_OPTIONS=detect_stack_use_after_return=1 [需要运行的程序]
+
+
