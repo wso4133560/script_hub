@@ -1,0 +1,4 @@
+ 加入memwatch.h，编译时加上-DMEMWATCH -DMW_STDIO及memwatch.c
+ 
+ #下载链接
+ https://github.com/viruscamp/memwatch.git
