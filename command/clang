@@ -1,2 +1,8 @@
  # clang查看链接路径
  clang -Xlinker -v
+
+# 启用内存错误检查工具，编译参数
+-fsanitize=address
+
+# 打印堆栈信息
+-fno-omit-frame-pointer
