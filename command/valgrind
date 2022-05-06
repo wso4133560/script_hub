@@ -13,3 +13,70 @@ valgrind报错VEX temporary storage exhausted
 
 # mips64上运行
 valgrind --vex-guest-max-insns=25 --trace-children=yes --show-reachable=yes --leak-check=full --log-file=[日志路径] [二进制文件]
+
+
+2、valgrind选项详解
+valgrind有公有的选项和每个工具自己的选项。这里只介绍少量公有选项，主要介绍Memcheck工具的选项。
+
+--tool=<toolname> [default: memcheck]
+        指定要运行的工具。
+
+--log-file=<filename>
+        指定日志输出的文件名。
+
+--leak-check=<no|summary|yes|full> [default: summary]
+        如果使能了该选项，在程序退出的时候，会统计内存泄漏的情况。如果设置为summary，会指出有多少内存泄漏；如是设置为full或者yes，会给出每条泄漏详细信息。
+
+--leak-resolution=<low|med|high> [default: high]
+        内存泄漏的详细信息包括该块内存在哪里分配的，分配时的函数调用堆栈。Memcheck会根据这个选项合并函数调用堆栈相似的条目。如果设置为low，只有开始的两个函数调用需要一致；如果设置为med，则需要开始的4个函数调用一致；如果为high，则所有的函数调用需要一致。
+
+--show-leak-kinds=<set> [default: definite,possible]
+        选择要显示哪几种类型的详细信息，可选值为all,none,definite,indirect,possible,reachable。
+
+--errors-for-leak-kinds=<set> [default: definite,possible]
+        指定哪几种类型的详细信息要视为错误信息。
+
+--leak-check-heuristics=<set> [default: none]
+        启发式检测，具体的作用见上面的分析。可选值为all,none,stdstring,length64,newarray,multipleinheritance.
+
+--show-reachable=<yes|no> , --show-possibly-lost=<yes|no>
+        类似--show-leak-kinds。
+
+--undef-value-errors=<yes|no> [default: yes]
+        控制是否要显示"uninitialised value"的错误。禁用这个选项可以加速Memcheck的运行。
+
+--track-origins=<yes|no> [default: no]
+        控制是否要跟踪"uninitialised values"的来源。默认情况下，Memcheck不会去跟踪，所以Memcheck会提示有"uninitialised value" ，但是不会告诉你来源（块是在哪里分配的，由那个函数分配）。
+        开启这个选项会增加系统资源消耗（cpu，内存），所以建议只在需要追踪这类问题的时候开启。
+
+--partial-loads-ok=<yes|no> [default: no]
+        用来控制字节对齐情况下的，判断从非对齐字节中加载数据是合法还是不合法？这个选项的含义有待学习。
+
+--keep-stacktraces=alloc|free|alloc-and-free|alloc-then-free|none [default: alloc-then-free]
+        可以选择记录malloc/free时的堆栈信息（stack trace）。
+        设为alloc-then-free时，Memcheck会记录分配时的堆栈信息，然后在释放时，用释放时的堆栈信息覆盖之前的记录。在这种情况下，报"use after free"错误的时候，只会打印free时的堆栈打印，看不到分配时候的信息。
+        其他几种选项比较好理解，省略解释。
+
+--freelist-vol=<number> [default: 20000000]
+        一块内存被释放之后，并不马上用来重新分配。它只是被标注成"inaccessible"然后放到空闲队列里。这样做的目的是让最先释放的内存，最后被使用，延长内存块重新分配的时间。在这段时间间隔中，Memcheck可以检测出对已释放空间的非法访问。
+        这个选项用来指定空闲队列的大小。增大这个值，可能会让Memcheck检测出更多对已释放空间的非法访问。
+
+--freelist-big-blocks=<number> [default: 1000000]
+        每次从空闲队列里取内存块的时候，会优先使用那些大小大于或者等于--freelist-big-blocks的块。这个保证"小"的块不会很快被用掉。这样Memcheck更可能检测出小的块的空悬指针之类的问题。
+        如果这个值设成0，那块将会以FIFO顺序被取出。
+
+--workaround-gcc296-bugs=<yes|no> [default: no]
+        用来避免GCC 2.96中的一个错误，但是我们现在使用的GCC一般4.X版本了，所以可以不用考虑这个选项
+
+--show-mismatched-frees=<yes|no> [default: yes]
+        是否显示"使用不匹配的内存分配和释放方式"错误。
+        在一种情况下，这个不匹配错误是不能避免的。就是当用户使用malloc/free来自定义new/new[]和delete/delete[]的实现，但是自定义的分配和释放函数的inline属性不匹配时（一个是inline，另一个不是）。例如delete是inline但是new不是，那么Memcheck会把所有的delete当成是free，这样就和new不匹配了。
+
+--ignore-ranges=0xPP-0xQQ[,0xRR-0xSS]
+        指定一个地址区间让Memcheck不用去检查。可以设置多个区间，用逗号分隔。
+
+--malloc-fill=<hexnumber>
+        指定一个16进制数用来填充新分配的内存空间（使用calloc分配的空间除外）。注意这些空间被自动填充了字节，但是Memcheck仍把它作为未初始化的来看待。
+
+--free-fill=<hexnumber>
+        指定一个16进制数用来填充被释放了的内存空间。注意这些空间仍被视作无效，无法访问。
