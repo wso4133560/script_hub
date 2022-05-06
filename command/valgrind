@@ -119,3 +119,11 @@ dump_lost valgrind.log "Invalid free" >> 4.invalid_used.log
 dump_lost valgrind.log "Conditional jump or move depends on uninitialised value" > 5.uninitialised_used.log
 dump_lost valgrind.log "Syscall param write(buf) points to uninitialised byte" >> 5.uninitialised_used.log
 dump_lost valgrind.log "Source and destination overlap in memcpy" > 6.overlap_used.log
+
+
+# 函数调用状态图
+# 多线程调用关系分开显示
+valgrind --tool=callgrind --separate-threads=yes [需要运行的程序]
+
+# 指定从main函数来显示调用关系
+gprof2dot -f callgrind -n0 -e0 --root=main [上面命令生成的文件] > [xxx.dot文件]
