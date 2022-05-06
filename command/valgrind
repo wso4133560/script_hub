@@ -10,3 +10,6 @@ https://valgrind.org/downloads/?src=www.discoversdk.com
 #解决
 valgrind报错VEX temporary storage exhausted
 加上参数  --vex-guest-max-insns=25
+
+# mips64上运行
+valgrind --vex-guest-max-insns=25 --trace-children=yes --show-reachable=yes --leak-check=full --log-file=[日志路径] [二进制文件]
