@@ -6,3 +6,7 @@ valgrind --leak-check=full [二进制文件]
 
 # valgrind下载地址
 https://valgrind.org/downloads/?src=www.discoversdk.com
+
+#解决
+valgrind报错VEX temporary storage exhausted
+加上参数  --vex-guest-max-insns=25
