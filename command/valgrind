@@ -127,3 +127,16 @@ valgrind --tool=callgrind --separate-threads=yes [需要运行的程序]
 
 # 指定从main函数来显示调用关系
 gprof2dot -f callgrind -n0 -e0 --root=main [上面命令生成的文件] > [xxx.dot文件]
+
+
+# windows看callgrind的界面
+https://sourceforge.net/projects/qcachegrindwin/
+
+# linux看callgrind的界面
+kcallgrind
+
+
+
+
+
+
