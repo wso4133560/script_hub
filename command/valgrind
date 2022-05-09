@@ -138,6 +138,11 @@ kcallgrind
 # 处理死锁问题
 valgrind --tool=drd --trace-mutex=yes [可执行程序]
 
+# 显示代码锁在哪个函数
+./valgrind --tool=helgrind [可执行程序]
+
+
+
 
 
 
