@@ -139,7 +139,7 @@ kcallgrind
 valgrind --tool=drd --trace-mutex=yes [可执行程序]
 
 # 显示代码锁在哪个函数
-./valgrind --tool=helgrind [可执行程序]
+./valgrind --read-var-info=yes --tool=helgrind [可执行程序]
 
 
 
