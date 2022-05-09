@@ -135,6 +135,13 @@ https://sourceforge.net/projects/qcachegrindwin/
 # linux看callgrind的界面
 kcallgrind
 
+# 处理死锁问题
+valgrind --tool=drd --trace-mutex=yes [可执行程序]
+
+
+
+
+
 
 
 
