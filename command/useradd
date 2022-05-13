@@ -1,0 +1,4 @@
+# debian10需要在PATH加上环境变量
+export PATH=/usr/sbin:$PATH
+
+useradd [名字]
