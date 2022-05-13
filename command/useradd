@@ -2,3 +2,4 @@
 export PATH=/usr/sbin:$PATH
 
 useradd [名字]
+useradd -s [/bin/bash] -m [名字]
