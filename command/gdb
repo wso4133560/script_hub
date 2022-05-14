@@ -69,7 +69,20 @@ set pagination off
 # gdb带参数命令
 gdb -args [可执行程序] [命令参数]
 
-# 使用python脚本添加gdb命令
+# gdb自定义命令
 http://ifeve.com/gdb-script/
+# 完整*.gdb格式
+define commandName  
+    statement  
+    ......  
+end
+
+document commandName
+    search a specified byte value(0 ~ 255) during a memory
+    usage: search_byte begin_addr end_addr byte
+end
+
+上述命令直接在gdb命令行中运行source xxx.gdb文件生效
+例子：
 
 
