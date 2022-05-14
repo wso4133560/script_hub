@@ -17,6 +17,8 @@ rbreak rb_*指令，找到了程序中所有以 tb_* 开头的函数
 # 开启日志将gdb的每条调试日志输出日志
 set logging file [日志文件名字]
 set logging on
+# 日志只输出到文件
+set logging debugredirect on
 
 # 自动反汇编接下来要执行的代码
 set disassemble-next-line on
