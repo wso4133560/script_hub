@@ -22,7 +22,7 @@ set logging on
 set disassemble-next-line on
 
 # 单步调试指令
-si命令
+si命令类似于s命令，ni命令类似于n命令。所不同的是，这两个命令（si/ni）所针对的是汇编指令，而s/n针对的是源代码。	
 
 # 设置多次进入断点
 ignore [断点ID] [断点次数]
