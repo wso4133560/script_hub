@@ -84,5 +84,10 @@ end
 
 上述命令直接在gdb命令行中运行source xxx.gdb文件生效
 例子：
+https://blog.csdn.net/hejinjing_tom_com/article/details/50350865
 
-
+打印a0寄存器后的地址
+define print_a0
+    set $a0_addr = $a0
+    x/16x $a0_addr
+end
