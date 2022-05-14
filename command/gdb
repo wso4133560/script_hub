@@ -59,6 +59,9 @@ handle SIG34 noprint
 # gdb调试脚本
 gdb [可执行程序] -command=[*.sh]
 
+# gdb带参数命令
+gdb -args [可执行程序] [命令参数]
+
 # 使用python脚本添加gdb命令
 http://ifeve.com/gdb-script/
 
