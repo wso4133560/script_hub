@@ -63,6 +63,9 @@ gdb [可执行程序] -command=[*.sh]
 Make breakpoint pending on future shared library load? (y or [n]) y
 set breakpoint pending on
 
+# 关闭pagequit
+set pagination off
+
 # gdb带参数命令
 gdb -args [可执行程序] [命令参数]
 
