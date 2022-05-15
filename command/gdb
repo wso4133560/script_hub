@@ -82,12 +82,21 @@ document commandName
     usage: search_byte begin_addr end_addr byte
 end
 
-上述命令直接在gdb命令行中运行source xxx.gdb文件生效
+# 上述命令直接在gdb命令行中运行source xxx.gdb文件生效
 例子：
 https://blog.csdn.net/hejinjing_tom_com/article/details/50350865
 
-打印a0寄存器后的地址
+# 打印a0寄存器后的地址
 define print_a0
     set $a0_addr = $a0
     x/16x $a0_addr
 end
+
+# 自动单步调试的脚本
+define print_instr
+    while 1
+        i r
+        ni
+    end
+end
+
