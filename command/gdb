@@ -100,3 +100,5 @@ define print_instr
     end
 end
 
+# 只将日志输出到文件
+set logging redirect on
