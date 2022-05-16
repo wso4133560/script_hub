@@ -100,5 +100,26 @@ define print_instr
     end
 end
 
+# 查一段内存值的函数
+define search
+    set $start = (char *) $arg0
+    set $end = (char *) $arg1
+    set $pattern = (short) $arg2
+    set $p = $start
+    while $p < $end
+        if (*(short *) $p) == $pattern
+            printf "pattern 0x%hx found at 0x%x\n", $pattern, $p
+        end
+        set $p++
+    end
+end
+document search
+Syntax: search <START> <END> <PATTERN>
+| Search for the given pattern beetween $start and $end address.
+end
+
+# 上述使用方法
+
+
 # 只将日志输出到文件
 set logging redirect on
