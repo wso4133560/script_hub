@@ -100,27 +100,8 @@ define print_instr
     end
 end
 
-# 查一段内存值的函数
-define search
-    set $start = (char *) $arg0
-    set $end = (char *) $arg1
-    set $pattern = (short) $arg2
-    set $p = $start
-    while $p < $end
-        if (*(short *) $p) == $pattern
-            printf "pattern 0x%hx found at 0x%x\n", $pattern, $p
-        end
-        set $p++
-    end
-end
-document search
-Syntax: search <START> <END> <PATTERN>
-| Search for the given pattern beetween $start and $end address.
-end
-
-# 上述使用方法
-search [start的地址] [end的地址] [需要查找的字符串字符串]
-search 0x5555858f5ea8 0x5555858f5ed8 0xffb20020
+# gdb的find一个int的值
+find [起始地址], [终止地址], (int)[需要查找的值]
 
 # 只将日志输出到文件
 set logging redirect on
