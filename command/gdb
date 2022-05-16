@@ -119,7 +119,7 @@ Syntax: search <START> <END> <PATTERN>
 end
 
 # 上述使用方法
-
+search 0x5555858f5ea8 0x5555858f5ed8 0xffb20020
 
 # 只将日志输出到文件
 set logging redirect on
