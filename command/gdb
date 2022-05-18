@@ -112,7 +112,6 @@ gdb -quiet [二进制]
 # gdb官方手册
 https://sourceware.org/gdb/current/onlinedocs/gdb.pdf
 
-# gdb python api
-# 安装gdb的库支持
-pip3 install gdb-tools
+# python扩展gdb
+https://blog.mengy.org/extend-gdb-with-python/
 
