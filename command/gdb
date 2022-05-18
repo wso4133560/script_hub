@@ -115,3 +115,6 @@ https://sourceware.org/gdb/current/onlinedocs/gdb.pdf
 # python扩展gdb
 https://blog.mengy.org/extend-gdb-with-python/
 
+
+# gdb查看编译配置参数
+show configuration
