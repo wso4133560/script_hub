@@ -108,3 +108,8 @@ set logging redirect on
 
 # gdb不打印信息的命令
 gdb -quiet [二进制]
+
+# gdb官方手册
+https://sourceware.org/gdb/current/onlinedocs/gdb.pdf
+
+# gdb python api
