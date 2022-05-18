@@ -105,3 +105,6 @@ find [起始地址], [终止地址], (int)[需要查找的值]
 
 # 只将日志输出到文件
 set logging redirect on
+
+# gdb不打印信息的命令
+gdb -quiet [二进制]
