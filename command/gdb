@@ -63,6 +63,9 @@ rwatch [地址]
 # 监控读或者写某个地址断点
 awatch [地址]
 
+# 查看硬件断点的数量
+show can-use-hw-watchpoints
+
 # 执行很多次的命令
 [命令] [次数]
 
