@@ -37,6 +37,12 @@ x/200i $pc-200
 gdb [可执行程序] --tui
 # 打条件断点
 b [断点ID|断点位置] if [c语言的condition]
+# 启用断点
+enable [breakpoints] [range...]
+enable 1-5 # 启用1-5断点
+# 禁用断点
+disable [breakpoints] [range...]
+例子：disable 1-5  # 禁用1到5的断点
 
 # 线程锁
 set scheduler-locking off|on
