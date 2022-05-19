@@ -126,3 +126,73 @@ https://blog.mengy.org/extend-gdb-with-python/
 ## 注册命令
 source xxx.py
 
+例子：
+import gdb
+
+class SearchPtr(gdb.Command):
+    start_addr = ""
+    end_addr = ""
+    b_num = 1
+    command = ""
+
+    def __init__(self):
+        super(self.__class__, self).__init__("search_ptr", gdb.COMMAND_USER)
+
+    def invoke(self, args, from_tty):
+        gdb.execute('set breakpoint pending on')
+        gdb.execute('set pagination off')
+        gdb.execute('set logging on')
+        gdb.execute('handle SIG34 pass')
+        gdb.execute('handle SIG34 noprint')
+
+        gdb.execute('b compiler.cpp:4435')
+        gdb.execute('r ~/tanglin/LoalCalculator/LoalCalculator/bin/Debug/net5.0/LoalCalculator.dll')
+
+        while True:
+            if self.is_compiler_b():
+                # 打断点
+                self.command = 'b *methodCodePtr'
+                print(self.command)
+                gdb.execute(self.command)
+                self.b_num = self.b_num + 1
+                self.command = 'disable {}'.format(self.b_num)
+                print(self.command)
+                gdb.execute(self.command)
+
+                self.command = 'b *(end_ptr - 8)'
+                print(self.command)
+                gdb.execute(self.command)
+                self.b_num = self.b_num + 1
+                self.command = 'disable {}'.format(self.b_num)
+                print(self.command)
+                gdb.execute('disable {}'.format(self.b_num))
+
+                # 获取start_ptr, end_ptr
+                self.command = 'p/x start_ptr'
+                print(self.command)
+                self.start_addr = gdb.execute(self.command, False, True)
+                self.start_addr = self.start_addr[self.start_addr.find('=') + 1: -1]
+
+                self.command = 'p/x end_ptr'
+                print(self.command)
+                self.end_addr = gdb.execute(self.command, False, True)
+                self.end_addr = self.end_addr[self.end_addr.find('=') + 1: -1]
+
+                gdb.execute('c')
+            else:
+                self.command = 'find {}, {}, (int)0x688898b2'.format(self.start_addr, self.end_addr)
+                print(self.command)
+                find_result = gdb.execute('find {}, {}, (int)0x688898b2'.format(self.start_addr, self.end_addr), False, True)
+                if -1 == find_result.find(' no '):
+                    gdb.execute('c')
+                else:
+                    return
+
+    def is_compiler_b(self):
+        line_info = gdb.execute('info line', False, True)
+        line_len = len("Line 4435")
+        if "Line 4435" == line_info[:line_len]:
+            return True
+        return False
+
+SearchPtr()
