@@ -56,6 +56,8 @@ info symbol [地址]
 多线程一定要加线程ID
 watch [-l|-location] expr [thread threadnum] [mask maskvalue]
 watch *(int*)0x12345678
+# 多线程时候的watch
+watch *(int*)0x12345678 thread [id号]
 # 监控读某个地址断点
 rwatch [地址]
 # 监控读或者写某个地址断点
