@@ -53,6 +53,8 @@ on:打开线程锁，锁定其他线程，只有当前线程执行
 info symbol [地址]
 
 # 例如: 监视一个4byte 的整形地址. 书写格式举例如下.
+多线程一定要加线程ID
+watch [-l|-location] expr [thread threadnum] [mask maskvalue]
 watch *(int*)0x12345678
 # 监控读某个地址断点
 rwatch [地址]
