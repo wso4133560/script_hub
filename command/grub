@@ -1,0 +1,5 @@
+# grub的路径
+/boot/grub/grub.cfg
+
+# 更新grub配置
+update-grub
