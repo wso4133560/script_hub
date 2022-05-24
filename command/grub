@@ -1,5 +1,5 @@
 # grub的路径
 /boot/grub/grub.cfg
 
-# 更新grub配置
+# 生成grub.cfg配置文件
 update-grub
