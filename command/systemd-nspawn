@@ -1,2 +1,7 @@
 # 搞性能的chroot
 sudo systemd-nspawn -D [chroot的rootfs]
+
+# 启动一个完整的系统：
+sudo systemd-nspawn -bD [chroot的rootfs]
+
+
