@@ -52,6 +52,8 @@ git config --global https.proxy 'socks5://127.0.0.1:1080'
 
 # git恢复成某个版本
 git reset --hard [hash值]
+# 版本恢复后强行推上去命令
+git push -f
 
 # 取消代理：
 git config --global --unset http.proxy
