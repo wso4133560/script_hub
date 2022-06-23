@@ -21,3 +21,6 @@ cmake [编译参数] -- -j[核心数]
 
 # 交叉编译的文件
 -DCMAKE_TOOLCHAIN_FILE=[文件路径]
+
+# 指定clang编译
+CC=clang CXX=clang++ cmake [后续参数]
