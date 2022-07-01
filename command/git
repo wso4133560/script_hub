@@ -62,3 +62,6 @@ git config --global --unset https.proxy
 # 给sh文件添加可执行权限
 find -name "*.sh" -exec chmod +x {} \;
 find -name "*.sh" -exec git update-index --chmod=+x {} \;
+
+# git查看链接
+git remote -v
