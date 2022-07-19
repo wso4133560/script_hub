@@ -1,0 +1,8 @@
+#!/bin/bash
+command="/home/tanglin/software/CMake-3.21.0-rc1/bin/cmake"
+
+for i in "$*"; do
+   command="${command}"" ${i}" 
+done
+
+eval $command
