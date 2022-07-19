@@ -1,0 +1,12 @@
+pid_value=`ps -aux|grep corerun`
+pid_array={${pid_value}}
+num=0
+for var in ${pid_array[@]}
+do
+    if [ $num -eq 1 ]
+    then
+          echo $var
+          break
+    fi
+    num=$[$num+1]
+done
