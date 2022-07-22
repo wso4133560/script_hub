@@ -1,0 +1,2 @@
+#可以定位C++的符号名称
+c++filt [符号名称： 例如 _ZTV10ZeroGCHeap]
