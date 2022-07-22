@@ -1,0 +1,2 @@
+# 查看undefined的命令
+ldd -r [二进制]
